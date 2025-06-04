@@ -2,7 +2,10 @@ import golosinas.*
 import mariano.*
 
 describe "group of tests" {
-
+//Globales para los test 
+method initialize(){
+  mariano.comprar(Bombon)
+}
   test "test 1" {
     assert.equals(100, 50+50)
   }
