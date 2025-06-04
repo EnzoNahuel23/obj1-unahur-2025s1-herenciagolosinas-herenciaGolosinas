@@ -13,14 +13,21 @@ object limon { }
  */
 class Bombon {
 	var peso = 15
-	
+	var property sabor = frutilla
 	method precio() { return 5 }
 	method peso() { return peso }
 	method mordisco() { peso = peso * 0.8 - 1 }
-	method sabor() { return frutilla }
 	method libreGluten() { return true }
 }
 
+
+class BombonChocolate inherits Bombon{
+		override method peso() = super() + 1
+		override method mordisco(){ 
+			super()
+			sabor = chocolate 
+		} 
+}
 
 class Alfajor {
 	var peso = 15
@@ -71,10 +78,11 @@ class Oblea {
 			peso = peso - (peso * 0.25)
 		}
 	}	
+	method tamañoMordisco() = if (peso>=70) 0.5 else 0.25
+	
 	method sabor() { return vainilla }
 	method libreGluten() { return false }
 }
-
 class Chocolatin {
 	// hay que acordarse de *dos* cosas, el peso inicial y el peso actual
 	// el precio se calcula a partir del precio inicial
